@@ -4,6 +4,11 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+/**
+ * Test cases for binary gap solution
+ * 
+ * @author FupingM
+ */
 public class BinaryGapTest {
 
     @Test

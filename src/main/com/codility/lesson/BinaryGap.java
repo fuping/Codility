@@ -8,9 +8,19 @@
  * contains two binary gaps: one of length 4 and one of length 3. The number 20
  * has binary representation 10100 and contains one binary gap of length 1. The
  * number 15 has binary representation 1111 and has no binary gaps.
+ * 
+ * Assume that: N is an integer within the range [1..2,147,483,647].
+ * 
+ * Complexity: expected worst-case time complexity is O(log(N)); expected
+ * worst-case space complexity is O(1).
  */
 package com.codility.lesson;
 
+/**
+ * Find longest sequence of zeros in binary representation of an integer.
+ * 
+ * @author Fuping
+ */
 public class BinaryGap {
 
     /**
