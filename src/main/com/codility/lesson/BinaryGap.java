@@ -14,8 +14,8 @@ package com.codility.lesson;
 public class BinaryGap {
 
     /**
-     * Straight forward solution which fail performance tests <br>
-     * Test score 53 out of 100 points
+     * Straight forward solution which has bad performance <br>
+     * Test score 100 out of 100 points
      * 
      * @param N
      * @return
@@ -33,8 +33,8 @@ public class BinaryGap {
 	String binaryString = Integer.toBinaryString(N);
 
 	// print input in the console
-	System.out.println("Input integer: " + N);
-	System.out.println("Binary String: " + binaryString);
+	// System.out.println("Input integer: " + N);
+	// System.out.println("Binary String: " + binaryString);
 
 	// create a counter
 	int counter = -1;
@@ -59,8 +59,8 @@ public class BinaryGap {
 		else {
 		    // keep the larger number
 		    binaryGap = Math.max(binaryGap, counter);
-		    // reset counter
-		    counter = -1;
+		    // reset counter/restart counting
+		    counter = 0;
 		}
 	    }
 	}
