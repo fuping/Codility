@@ -33,7 +33,7 @@
 
 package com.codility.demo;
 
-import java.util.Arrays;
+import java.math.BigInteger;
 
 public class EquilibriumIndex {
 
@@ -52,18 +52,32 @@ public class EquilibriumIndex {
 	}
 
 	// sum of int array
-	long total = Arrays.stream(A).sum();
+	// IntStream could not solve overflow issue
+	// long total = Arrays.stream(A).sum();
+	BigInteger total = BigInteger.ZERO;
+	for (int i : A) {
+	    total = total.add(BigInteger.valueOf(i));
+	}
 
-	// left side starts with 0
-	long left = 0;
+	// System.out.println("Total: " + total);
+
+	// left side starts with first value of A[]
+	BigInteger left = BigInteger.ZERO;
 	for (int i = 0; i < A.length; i++) {
+	    BigInteger right = total.subtract(BigInteger.valueOf(A[i]));
+	    right = right.subtract(left);
+
+	    // System.out.println("Index: " + i);
+	    // System.out.println("Left: " + left);
+	    // System.out.println("Right: " + right);
+
 	    // finding equilibrium point
-	    if (left == total - left - A[i]) {
+	    if (left.equals(right)) {
 		return i;
 	    }
 
 	    // sum up left
-	    left = left + A[i];
+	    left = left.add(BigInteger.valueOf(A[i]));
 	}
 
 	return -1;
