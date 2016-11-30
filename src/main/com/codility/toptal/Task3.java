@@ -22,10 +22,20 @@ public class Task3 {
 
     public static void main(String[] args) {
 
-	int[][] board = { { -1, -1, -1, -1, -1, -1, -1, -1 }, { -1, -1, -1, -1, -1, -1, -1, -1 },
-		{ -1, -1, -1, -1, -1, -1, -1, -1 }, { -1, -1, -1, -1, -1, -1, -1, -1 },
-		{ -1, -1, -1, -1, -1, -1, -1, -1 }, { -1, -1, -1, -1, -1, -1, -1, -1 },
-		{ -1, -1, -1, -1, -1, -1, -1, -1 }, { -1, -1, -1, -1, -1, -1, -1, -1 } };
+	/*
+	 * int[][] board = { { -1, -1, -1, -1, -1, -1, -1, -1 }, { -1, -1, -1,
+	 * -1, -1, -1, -1, -1 }, { -1, -1, -1, -1, -1, -1, -1, -1 }, { -1, -1,
+	 * -1, -1, -1, -1, -1, -1 }, { -1, -1, -1, -1, -1, -1, -1, -1 }, { -1,
+	 * -1, -1, -1, -1, -1, -1, -1 }, { -1, -1, -1, -1, -1, -1, -1, -1 }, {
+	 * -1, -1, -1, -1, -1, -1, -1, -1 } };
+	 */
+
+	int[][] board = new int[8][8];
+	for (int i = 0; i < board.length; i++) {
+	    for (int j = 0; j < board[i].length; j++) {
+		board[i][j] = -1;
+	    }
+	}
 
 	rowLen = board.length;
 	colLen = board[0].length;
@@ -122,7 +132,7 @@ public class Task3 {
 	}
     }
 
-    static class Coordinate implements Comparable<Coordinate> {
+    static class Coordinate {
 
 	public int row;
 	public int col;
@@ -136,11 +146,6 @@ public class Task3 {
 	    this.row = row;
 	    this.col = col;
 
-	}
-
-	@Override
-	public int compareTo(Coordinate that) {
-	    return this.row - that.row - this.col - that.col;
 	}
     }
 
