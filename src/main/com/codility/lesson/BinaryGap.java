@@ -16,6 +16,8 @@
  */
 package com.codility.lesson;
 
+import java.util.stream.Stream;
+
 /**
  * Find longest sequence of zeros in binary representation of an integer.
  * 
@@ -30,7 +32,7 @@ public class BinaryGap {
      * @param N
      * @return
      */
-    public static int calculateBinaryGap(int N) {
+    public static int calculateBinaryGap0(int N) {
 	// positive number check
 	if (N <= 0) {
 	    return 0;
@@ -76,6 +78,36 @@ public class BinaryGap {
 	}
 
 	return binaryGap;
+    }
+
+    /**
+     * Processing Data with Java SE 8 Streams
+     * 
+     * @param N
+     * @return
+     */
+    public static int calculateBinaryGap(int N) {
+	return Stream
+		.of(
+			// integer to binary string
+			Integer.toBinaryString(N)
+				// remove the potential 0(s) at the end of the
+				// string (0 to unlimited 0s and end with 0)
+				.replaceAll("0+$", "")
+				// split string to array by integer '1' which
+				// array elements contains 0s only
+				.split("1+"))
+		// lambda expressions: use filter to keep not null elements
+		.filter(a -> a != null)
+		// method references: convert stream to integer by using the
+		// length of string elements
+		.map(String::length)
+		// method references: find the largest number in the stream by
+		// using integer comparator
+		.max(Integer::compare)
+		// return 0 if nothing matches the operations above
+		.orElse(0);
+
     }
 
 }
