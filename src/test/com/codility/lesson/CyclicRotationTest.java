@@ -1,8 +1,6 @@
 package com.codility.lesson;
 
-import static org.junit.Assert.assertTrue;
-
-import java.util.Arrays;
+import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Test;
 
@@ -16,7 +14,22 @@ public class CyclicRotationTest {
 
 	int[] result = CyclicRotation.solution(input, rotation);
 
-	assertTrue(Arrays.equals(expect, result));
+	assertArrayEquals(expect, result);
+
+	assertArrayEquals(input, CyclicRotation.solution(input, 0));
+	assertArrayEquals(new int[] { 6, 3, 8, 9, 7 }, CyclicRotation.solution(input, 1));
+	assertArrayEquals(new int[] { 7, 6, 3, 8, 9 }, CyclicRotation.solution(input, 2));
+	assertArrayEquals(new int[] { 9, 7, 6, 3, 8 }, CyclicRotation.solution(input, 3));
+
+	assertArrayEquals(input, CyclicRotation.solution(input, 5));
+	assertArrayEquals(new int[] { 6, 3, 8, 9, 7 }, CyclicRotation.solution(input, 6));
+	assertArrayEquals(new int[] { 7, 6, 3, 8, 9 }, CyclicRotation.solution(input, 7));
+	assertArrayEquals(new int[] { 9, 7, 6, 3, 8 }, CyclicRotation.solution(input, 8));
+
+	assertArrayEquals(input, CyclicRotation.solution(input, 10));
+	assertArrayEquals(new int[] { 6, 3, 8, 9, 7 }, CyclicRotation.solution(input, 11));
+	assertArrayEquals(new int[] { 7, 6, 3, 8, 9 }, CyclicRotation.solution(input, 12));
+	assertArrayEquals(new int[] { 9, 7, 6, 3, 8 }, CyclicRotation.solution(input, 13));
     }
 
 }
