@@ -30,7 +30,7 @@
  * complexity is O(1), beyond input storage (not counting the storage required
  * for input arguments). Elements of input arrays can be modified.
  */
-package com.codility.lesson;
+package com.codility.lesson.arrays;
 
 import java.util.Arrays;
 import java.util.HashMap;

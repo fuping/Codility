@@ -1,8 +1,10 @@
-package com.codility.lesson;
+package com.codility.lesson.arrays;
 
 import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Test;
+
+import com.codility.lesson.arrays.CyclicRotation;
 
 public class CyclicRotationTest {
 

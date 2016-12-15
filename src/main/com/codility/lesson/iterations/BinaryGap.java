@@ -14,7 +14,7 @@
  * Complexity: expected worst-case time complexity is O(log(N)); expected
  * worst-case space complexity is O(1).
  */
-package com.codility.lesson;
+package com.codility.lesson.iterations;
 
 import java.util.stream.Stream;
 

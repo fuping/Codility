@@ -21,7 +21,7 @@
  * N and K are integers within the range [0..100]; each element of array A is an
  * integer within the range [-1,000..1,000].
  */
-package com.codility.lesson;
+package com.codility.lesson.arrays;
 
 import java.util.Arrays;
 import java.util.LinkedList;
