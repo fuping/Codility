@@ -4,8 +4,6 @@ import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Test;
 
-import com.codility.lesson.arrays.CyclicRotation;
-
 public class CyclicRotationTest {
 
     @Test

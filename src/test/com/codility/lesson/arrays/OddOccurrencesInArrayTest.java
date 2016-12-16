@@ -4,8 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.codility.lesson.arrays.OddOccurrencesInArray;
-
 public class OddOccurrencesInArrayTest {
 
     @Test
