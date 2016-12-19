@@ -38,17 +38,21 @@ public class PermMissingElem {
      * Loop through all elements of the array and compare the sum
      * 
      * Assessment: <br>
-     * Correctness 80% (failed empty_and_single which doesn't like
-     * IllegalArgumentException)<br>
+     * Correctness 100% <br>
      * Performance 100% <br>
      * 
      * @param A
      * @return
      */
     public static int solution0(int[] A) {
-	// null check
-	if (A == null || A.length < 1) {
+	// null and size check
+	if (A == null || A.length > 1000000) {
 	    throw new IllegalArgumentException();
+	}
+
+	// empty array
+	if (A.length < 1) {
+	    return 1;
 	}
 
 	// create the sum
@@ -67,7 +71,7 @@ public class PermMissingElem {
      * loop required
      * 
      * Assessment: <br>
-     * Correctness 80% (failed empty_and_single which got 0 expected 1)<br>
+     * Correctness 100% <br>
      * Performance 60% <br>
      * large_range: got -2147483647 expected 1; got -2147471303 expected 12345
      * <br>
@@ -77,9 +81,14 @@ public class PermMissingElem {
      * @return
      */
     public static int solution(int[] A) {
-	// null check
-	if (A == null || A.length < 1) {
-	    return 0;
+	// null and size check
+	if (A == null || A.length > 1000000) {
+	    throw new IllegalArgumentException();
+	}
+
+	// empty array
+	if (A.length < 1) {
+	    return 1;
 	}
 
 	// create the sum
