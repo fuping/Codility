@@ -63,10 +63,8 @@ public class TapeEquilibrium {
      * Straight forward thinking solution
      * 
      * Assessment: <br>
-     * Correctness 66% (double, two elements got 0 expected 2000; small, small
-     * elements got 0 expected 20)<br>
-     * Performance 83% (medium_random2 random medium, numbers from -1,000 to 50,
-     * length = ~10,000 running time: 0.77 sec., time limit: 0.69 sec.)<br>
+     * Correctness 100%<br>
+     * Performance 100%<br>
      * 
      * @param A
      * @return
@@ -83,15 +81,16 @@ public class TapeEquilibrium {
 	int left = A[0];
 
 	// loop through the array
-	for (int i = 1; i < A.length; i++) {
+	// don't go to the last element of the array, as 0 < P < N
+	for (int i = 1; i < A.length - 1; i++) {
 	    left = left + A[i];
 	    right = right - A[i];
 
 	    // keep the minimal difference
 	    minimal = minimal < Math.abs(left - right) ? minimal : Math.abs(left - right);
 
-	    System.out.println("left: " + left + "; rigth: " + right);
-	    System.out.println("minimal: " + minimal);
+	    // System.out.println("left: " + left + "; rigth: " + right);
+	    // System.out.println("minimal: " + minimal);
 
 	    // it could not be smaller than 0
 	    if (minimal == 0) {
