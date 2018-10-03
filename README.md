@@ -1,6 +1,6 @@
-# Project Title
+# Codility playground
 
-One Paragraph of project description goes here
+The project is a coding playground of codility lessons and demos
 
 ## Getting Started
 
